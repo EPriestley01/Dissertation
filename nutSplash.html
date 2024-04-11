@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <title>Nutrition</title>
+    <br>
+    <br>
+
+    <!-----------Navigate Nutrition Page----------------->
+
+    <div class="container">
+        <div class="welcomeRow">
+            <div class="col-3">
+                <h1 style="text-align: center">Record A Meal</h1>
+                <br>
+                <br>
+                <p style="text-align: center">Click below to record a new meal. Dont lose your meals and record them to
+                    track your progress</p>
+                <center><a href="#record" class="navBtn">Record</a></center>
+            </div>
+            <div class="col-3">
+                <h1 style="text-align: center">View Your Meals</h1>
+                <br>
+                <br>
+                <p style="text-align: center">Click below to view your meals. View your recorded meals and track your
+                    progress</p>
+                <FORM action="{{ url_for('nutView') }}" method="post">
+                    <center><INPUT
+                            style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;"
+                            TYPE="SUBMIT" VALUE="View Meals" name="B1"></center>
+                    <p>
+                    <div class="user-email2"></div>
+                    </p>
+                </FORM>
+            </div>
+            <div class="col-3">
+                <h1 style="text-align: center">Delete a Meal</h1>
+                <br>
+                <br>
+                <p style="text-align: center">Click below to delete a previous meal. If you have made a mistake
+                    recording a meal just delete and resubmit it</p>
+                <center><a href="/nutDelete" class="navBtn">Delete</a></center>
+            </div>
+        </div>
+    </div>
+
+    <br id="record">
+    <br>
+    <br>
+    <br>
+
+
+    <!-----------Submit a Meal----------------->
+    <div class="offer">
+        <div class="small-container">
+            <h2 class="title">Record a Meal:</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="welcomeRow">
+            <div class="col-3">
+                <h1>Record Your Latest Meal</h1>
+                <br>
+                <br>
+                <p>Click here to record your meal so you can save your progress.</p>
+            </div>
+            <div class="col-3-2">
+                <FORM action="{{ url_for('afterNutSubmit') }}" method="post">
+                    <table style="width:100%" BORDER="1">
+                        <tr>
+                            <th>Workout Date</th>
+                            <th>Workout Name</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="inputDateForm" type="date" id="nutDate" name="nutDate" required>
+                            </td>
+                            <td>
+                                <select class="custom-select" name="mealNames" id="mealNames">
+                                    <option value="Breakfast">Breakfast</option>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Dinner">Dinner</option>
+                                    <option value="Snack">Snack</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <table style="width:100%">
+                        <tr>
+                            <th>Food</th>
+                            <th style="width:30%">Amount</th>
+                            <th style="width:20%">Unit</th>
+                            <th style="width:30%">Calories</th>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem1" placeholder="Item 1"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount1"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit1" id="fdUnit1">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal1" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem2" placeholder="Item 2"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount2"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit2" id="fdUnit2">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal2" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem3" placeholder="Item 3"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount3"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit3" id="fdUnit3">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal3" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem4" placeholder="Item 4"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount4"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit4" id="fdUnit4">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal4" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem5" placeholder="Item 5"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount5"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit5" id="fdUnit5">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal5" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem6" placeholder="Item 6"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount6"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit6" id="fdUnit6">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal6" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem7" placeholder="Item 7"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount7"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit7" id="fdUnit7">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal7" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem8" placeholder="Item 8"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount8"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit8" id="fdUnit8">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal8" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem9" placeholder="Item 9"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount9"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit9" id="fdUnit9">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal9" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                        <tr>
+                            <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="fdItem10" placeholder="Item 10"></td>
+                            <td style="width:30%"><INPUT id="inputDataIntForm" TYPE="TEXT" NAME="fdAmount10"
+                                                         placeholder="0" min="0" max="1000"></td>
+                            <td>
+                                <select class="custom-select" name="fdUnit10" id="fdUnit10">
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="cups">cups</option>
+                                    <option value="Snack">ounces</option>
+                                </select>
+                            </td>
+                            <td><INPUT id="inputDataIntForm" TYPE="number" NAME="fdCal10" placeholder="0" min="0"
+                                       max="1000"></td>
+                        </tr>
+                    </table>
+                    <P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B1"></P>
+                    <p>
+                    <div class="user-email1"></div>
+                    </p>
+                </FORM>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

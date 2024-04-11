@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+{% block content %}
+
+
+
+    <!-----------welcome message----------------->
+    <div class="header">
+        <div class="container">
+            <div class="welcomeRow">
+                <div class="col-2">
+                    <h1>Sculpt your dream <br> physique today <br> with gymFit</h1>
+                    <br>
+                    <br>
+                    <p>We understand the hardest part of keeping fit is tracking you progress, <br>
+                        That’s why we have designed a service to help you keep track of your gym routine, nutrition and
+                        supplimentation.</p>
+                    <p class="btn"><a href="#" style="color:white" class="modal-trigger" data-target="modal-signup"> Join Now &#8594;</a>
+                    </p>
+                </div>
+                <div class="col-2">
+                    <img src="static/welcome.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!-----------featured categories----------------->
+    <div class="categories">
+        <div class="small-container">
+            <h2 class="title">Examples:</h2>
+            <br>
+            <div class="row">
+                <div class="col-categories">
+                    <a href="https://www.nuffieldhealth.com/article/gym-workouts-for-beginners">
+                        <img src="static/workout1.png">
+                    </a>
+                </div>
+                <div class="col-categories">
+                    <a href="https://www.eatingwell.com/category/4286/meal-plans/">
+                        <img src="static/nutrition1.png">
+                    </a>
+                </div>
+                <div class="col-categories">
+                    <a href="https://www.muscleandfitness.com/supplements/build-muscle/ultimate-beginner-s-guide-supplements/">
+                        <img src="static/suppliments1.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <!----------- message 2 ----------------->
+    <div class="header">
+        <div class="container">
+
+            <div class="welcomeRow">
+                <div class="col-2">
+                    <img src="static/message2.png">
+                </div>
+                <div class="col-2">
+                    <h1>Take your fitness <br>to the next <br> level today </h1>
+                    <br>
+                    <br>
+                    <p>View the suppliments and gym equiptment that , <br>
+                        our users but the most to help you on your journey.</p>
+                    <a href="#products" class="btn"> Shop Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br id="products">
+    <br>
+    <br>
+    <br>
+
+
+    <!-----------featured products----------------->
+    <div class="small-container">
+        <h2 class="title">Frequently Bought</h2>
+        <div class="row">
+            <div class="col-4">
+                <a href="https://sbdapparel.com/products/knee-sleeves">
+                    <img src="static/FP1.jpg">
+                </a>
+                <h4>Knee Sleeves</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9734;</li>
+                </div>
+                <p>£59.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://sbdapparel.com/products/13mm-lever-belt">
+                    <img src="static/FP2.jpg">
+                </a>
+                <h4>13MM Lever Belt</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                </div>
+                <p>£149.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://sbdapparel.com/products/elbow-sleeves">
+                    <img src="static/FP3.jpg">
+                </a>
+                <h4>Elbow Sleeves</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                </div>
+                <p>£44.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://sbdapparel.com/products/wrist-wraps">
+                    <img src="static/FP4.jpg">
+                </a>
+                <h4>Wrist Wraps</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                </div>
+                <p>£29.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://www.bulk.com/uk/pure-whey-protein.html">
+                    <img src="static/FP5.jpg">
+                </a>
+                <h4>Pure Whey Protein</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9734;</li>
+                </div>
+                <p>£11.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://www.bulk.com/uk/vitamin-c-tablets-1000mg.html">
+                    <img src="static/FP6.jpg">
+                </a>
+                <h4>Vitamin C Tablets</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9734;</li>
+                </div>
+                <p>£4.99</p>
+            </div>
+            <div class="col-4">
+                <img src="static/FP7.jpg">
+                <a href="https://www.bulk.com/uk/informed-mass.html">
+                    <h4>Informed Mass Gainer</h4>
+                </a>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                </div>
+                <p>£34.99</p>
+            </div>
+            <div class="col-4">
+                <a href="https://www.bulk.com/uk/macro-munch-protein-bar.html">
+                    <img src="static/FP8.jpg">
+                </a>
+                <h4>Chocolate Protein Bar</h4>
+                <div class="rating">
+                    <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                </div>
+                <p>£2.00</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-----------reviews----------------->
+    <div class="reviews">
+        <h2 class="title">Reviews</h2>
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left" style="font-size:24px"></i>
+                    <p>"GymFit really help me. They helped me record my progress and achieve my goals. THANK YOU
+                        GYMFIT!"</p>
+                    <div class="rating">
+                        <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                    </div>
+                    <img src="static/review1.jpg">
+                    <h3>John Doe</h3>
+                </div>
+
+                <div class="col-3">
+                    <i class="fa fa-quote-left" style="font-size:24px"></i>
+                    <p>"GymFit is the perfect app to track everything you need on your fitness journey, this has saved
+                        me time and money"</p>
+                    <div class="rating">
+                        <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                    </div>
+                    <img src="static/review2.jpg">
+                    <h3>Sarah Mann</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left" style="font-size:24px"></i>
+                    <p>"GymFit you are amazing. My progress speaks for itslef. I would highly recommend this app to
+                        anyone. The quality is 10/10"</p>
+                    <div class="rating">
+                        <li>&#9733; &#9733; &#9733; &#9733; &#9733;</li>
+                    </div>
+                    <img src="static/review3.jpg">
+                    <h3>Mike Hall</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% set active_page = "workouts" %}
+{% block content %}
+
+
+<title>Workouts</title>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record A workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new workout. Dont lose your workout and record it to track your progress</p>
+            <center><a href = "#record" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Workouts</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your workouts. View your recorderd workouts and track your progress</p>
+            <FORM action="{{ url_for('wrkView') }}" method="post">
+                <center><INPUT style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;" TYPE="SUBMIT" VALUE="View Workouts" name="B1"></center>
+                <p><div class="user-email2"></div></p>
+            </FORM>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete a Workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous workout. If you have make a mistake recording a workout just delete and resubmit it</p>
+            <center><a href = "/wrkDelete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+
+<br id="record">
+<br>
+<br>
+<br>
+
+
+<!-----------Submit a Workout----------------->
+<div class="offer">
+<div class = "small-container">
+    <h2 class = "title" id="record">Record a workout:</h2>
+</div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Record Your Latest workout</h1>
+            <br>
+            <br>
+            <p>Fill in the table and click submit to record your workout</p>
+        </div>
+        <div class="col-3-2">
+            <FORM action="{{ url_for('afterWrkSubmit') }}" method="post">
+             <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Workout Date</th>
+                    <th>Workout Name</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="inputDateForm" type="date" id="wrkDate" name="wrkDate" required>
+                    </td>
+                    <td>
+                        <select class="custom-select" name="wrkName" id="wrkName">
+                             <option value="Chest">Chest</option>
+                            <option value="Shoulders">Shoulders</option>
+                            <option value="Arms">Arms</option>
+                            <option value="Legs">Legs</option>
+                            <option value="Back">Back</option>
+                            <option value="Push 1">Push 1</option>
+                            <option value="Pull 1">Pull 1</option>
+                            <option value="Legs 1">Legs 1</option>
+                            <option value="Push 2">Push 2</option>
+                            <option value="Pull 2">Pull 2</option>
+                            <option value="Legs 2">Legs 2</option>
+                            <option value="Upper">Upper</option>
+                            <option value="Lower">Lower</option>
+                            <option value="Full Body">Full Body</option>
+                            <option value="Full Body">Cardio</option>
+                            <option value="Full Body">Circuit</option>
+                        </select>
+                    </td>
+                </tr>
+             </table>
+
+            <br>
+
+            <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Exercise</th>
+                    <th style="width:10%">Weight</th>
+                    <th style="width:10%">Reps</th>
+                    <th style="width:10%">Sets</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx1" placeholder="Exercise 1" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight1" placeholder="0" min="0s" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep1" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet1" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote1" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx2" placeholder="Exercise 2" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight2" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep2" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet2" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote2" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx3" placeholder="Exercise 3" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight3" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep3" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet3" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote3" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx4" placeholder="Exercise 4" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight4" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep4" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet4" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote4" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx5" placeholder="Exercise 5" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight5" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep5" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet5" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote5" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx6" placeholder="Exercise 6" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight6" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep6" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet6" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote6" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx7" placeholder="Exercise 7" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight7" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep7" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet7" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote7" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx8" placeholder="Exercise 8" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight8" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep8" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet8" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote8" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx9" placeholder="Exercise 9" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight9" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep9" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet9" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote9" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkEx10" placeholder="Exercise 10" maxlength="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkWeight10" placeholder="0" min="0" max="1000"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkRep10" placeholder="0" min="1" max="50"></td>
+                    <td style="width:10%"><INPUT id="inputDataIntForm" TYPE="number" NAME="wrkSet10" placeholder="0" min="1" max="50"></td>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="wrkNote10" placeholder="Notes"></td>
+                </tr>
+            </table>
+            <P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B1"></P>
+            <p><div class="user-email1"></div></p>
+            </FORM>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

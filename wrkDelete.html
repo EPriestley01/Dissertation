@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% set active_page = "workouts" %}
+{% block content %}
+
+
+<title>Workouts</title>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record A workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new workout. Dont lose your workout and record it to track your progress</p>
+            <center><a href = "#record" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Workouts</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your workouts. View your recorderd workouts and track your progress</p>
+            <FORM action="{{ url_for('wrkView') }}" method="post">
+                <center><INPUT style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;" TYPE="SUBMIT" VALUE="View Workouts" name="B1"></center>
+                <p><div class="user-email2"></div></p>
+            </FORM>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete a Workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous workout. If you have make a mistake recording a workout just delete and resubmit it</p>
+            <center><a href = "#delete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+
+<br id="record">
+<br>
+<br>
+<br>
+
+
+
+
+<!-----------Delete a Workout----------------->
+<div class="offer">
+<div class = "small-container">
+    <h2 class = "title" id="delete">Delete a Workout:</h2>
+</div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Delete a workout</h1>
+            <br>
+            <br>
+            <p>Fill in the table and click delete to delete your workout</p>
+        </div>
+        <div class="col-3-2">
+             <FORM action="{{ url_for('afterWrkDelete') }}" method="post">
+             <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Workout Date</th>
+                    <th>Workout Name</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="inputDateForm" type="date" id="wrkDate" name="wrkDate"   >
+                    </td>
+                    <td>
+                        <select class="custom-select" name="wrkName" id="wrkName">
+                             <option value="Chest">Chest</option>
+                            <option value="Shoulders">Shoulders</option>
+                            <option value="Arms">Arms</option>
+                            <option value="Legs">Legs</option>
+                            <option value="Back">Back</option>
+                            <option value="Push 1">Push 1</option>
+                            <option value="Pull 1">Pull 1</option>
+                            <option value="Legs 1">Legs 1</option>
+                            <option value="Push 2">Push 2</option>
+                            <option value="Pull 2">Pull 2</option>
+                            <option value="Legs 2">Legs 2</option>
+                            <option value="Upper">Upper</option>
+                            <option value="Lower">Lower</option>
+                            <option value="Full Body">Full Body</option>
+                        </select>
+                    </td>
+                </tr>
+             </table>
+
+            <br>
+            <P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B1"></P>
+            <p><div class="user-email1"></div></p>
+            </FORM>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

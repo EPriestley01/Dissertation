@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% set active_page = "nutrition" %}
+{% block content %}
+
+
+<title>Nutrition</title>
+<br>
+
+
+<!-----------Navigate Nutrition Page----------------->
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record A Meal</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new meal. Dont lose your meals and record them to track your progress</p>
+            <center><a href = "/nutSplash" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Meals</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your meals. View your recorded meals and track your progress</p>
+            <center><a href = "#meals" class="navBtn">Meals</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete a Meal</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous meal. If you have made a mistake recording a meal just delete and resubmit it</p>
+            <center><a href = "/nutDelete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+<br id="meals">
+<br>
+<br>
+<br>
+
+<!-----------View Your Recent Meals----------------->
+{% for d in data %}
+        <div class="offer">
+            <div class = "small-container">
+                <h2 class = "title">Your Meals:</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class ="welcomeRow">
+                <div class="col-3">
+                    <h1> {{ d['mealNames'] }}</h1>
+                    <h1>on</h1>
+                    <h1>{{ d['nutDate'] }}</h1>
+                    <br>
+                    <h1>Total Calories: {{ d['calTotal'] }}</h1>
+                </div>
+                <div class ="col-3-2">
+                    <br>
+                    <table style = "width:100%">
+                        <tr>
+                            <th>Food</th>
+                            <th style="width:30%">Amount</th>
+                            <th style="width:20%">Unit</th>
+                            <th style="width:30%">Calories</th>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem1'] }}</td>
+                            <td> {{ d['fdAmount1'] }}</td>
+                            <td>{{ d['fdUnit1'] }}</td>
+                            <td>{{ d['fdCal1'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem2'] }}</td>
+                            <td> {{ d['fdAmount2'] }}</td>
+                            <td>{{ d['fdUnit2'] }}</td>
+                            <td>{{ d['fdCal2'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem3'] }}</td>
+                            <td> {{ d['fdAmount3'] }}</td>
+                            <td>{{ d['fdUnit3'] }}</td>
+                            <td>{{ d['fdCal3'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem4'] }}</td>
+                            <td> {{ d['fdAmount4'] }}</td>
+                            <td>{{ d['fdUnit4'] }}</td>
+                            <td>{{ d['fdCal4'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem5'] }}</td>
+                            <td> {{ d['fdAmount5'] }}</td>
+                            <td>{{ d['fdUnit5'] }}</td>
+                            <td>{{ d['fdCal5'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem6'] }}</td>
+                            <td> {{ d['fdAmount6'] }}</td>
+                            <td>{{ d['fdUnit6'] }}</td>
+                            <td>{{ d['fdCal6'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem7'] }}</td>
+                            <td> {{ d['fdAmount7'] }}</td>
+                            <td>{{ d['fdUnit7'] }}</td>
+                            <td>{{ d['fdCal7'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem8'] }}</td>
+                            <td> {{ d['fdAmount8'] }}</td>
+                            <td>{{ d['fdUnit8'] }}</td>
+                            <td>{{ d['fdCal8'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem9'] }}</td>
+                            <td> {{ d['fdAmount9'] }}</td>
+                            <td>{{ d['fdUnit9'] }}</td>
+                            <td>{{ d['fdCal9'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['fdItem10'] }}</td>
+                            <td> {{ d['fdAmount10'] }}</td>
+                            <td>{{ d['fdUnit10'] }}</td>
+                            <td>{{ d['fdCal10'] }}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% set active_page = "supplements" %}
+{% block content %}
+
+<title>Supplements</title>
+<br>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new supplement. Don't lose your supplement usage and record it to track yourself</p>
+            <center><a href = "/suppSplash" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your supplements. View your recorded supplements and track your progress</p>
+            <center><a href = "#view" class="navBtn">Supplements</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous supplements. If you have made a mistake recording supplements just delete and resubmit</p>
+            <center><a href = "/suppDelete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+
+{% for d in data %}
+     <div class="offer">
+        <div class = "small-container">
+            <h2 class = "title">Your Supplements:</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class ="welcomeRow">
+            <div class="col-3">
+                <center><h1>supplements</h1></center>
+                <center><h1>on</h1></center>
+                <center><h1>{{ d['suppDate'] }}</h1></center>
+            </div>
+            <div class ="col-3-2">
+                <br>
+                <table style = "width:100%">
+                    <tr>
+                        <th>Food</th>
+                        <th style="width:30%">Amount</th>
+                        <th style="width:20%">Unit</th>
+                    </tr>
+                    <tr>
+                        <td> {{ d['suppOneName'] }}</td>
+                        <td> {{ d['suppOneAmount'] }}</td>
+                        <td>{{ d['suppOneMeasurement'] }}</td>
+                    </tr>
+                    <tr>
+                        <td> {{ d['suppTwoName'] }}</td>
+                        <td> {{ d['suppTwoAmount'] }}</td>
+                        <td>{{ d['suppTwoMeasurement'] }}</td>
+                    </tr>
+                    <tr>
+                        <td> {{ d['suppThreeName'] }}</td>
+                        <td> {{ d['suppThreeAmount'] }}</td>
+                        <td>{{ d['suppThreeMeasurement'] }}</td>
+                    </tr>
+                    <tr>
+                        <td> {{ d['suppFourName'] }}</td>
+                        <td> {{ d['suppFourAmount'] }}</td>
+                        <td>{{ d['suppFourMeasurement'] }}</td>
+                    </tr>
+                    <tr>
+                        <td> {{ d['suppFiveName'] }}</td>
+                        <td> {{ d['suppFiveAmount'] }}</td>
+                        <td>{{ d['suppFiveMeasurement'] }}</td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endfor %}
+
+
+<br>
+<br>
+
+
+
+
+{% endblock %}

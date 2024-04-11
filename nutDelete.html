@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% set active_page = "nutrition" %}
+{% block content %}
+
+
+<title>Nutrition</title>
+<br>
+
+
+<!-----------Navigate Nutrition Page----------------->
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record A Meal</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new meal. Dont lose your meals and record them to track your progress</p>
+            <center><a href = "/nutSplash" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Meals</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your meals. View your recorded meals and track your progress</p>
+            <FORM action="{{ url_for('nutView') }}" method="post">
+                <center><INPUT style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;" TYPE="SUBMIT" VALUE="View Meals" name="B1"></center>
+                <p><div class="user-email2"></div></p>
+            </FORM>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete a Meal</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous meal. If you have made a mistake recording a meal just delete and resubmit it</p>
+            <center><a href = "#delete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+<br id="delete">
+<br>
+<br>
+<br>
+
+
+<!-----------Delete a Workout----------------->
+<div class="offer">
+<div class = "small-container">
+    <h2 class = "title" id="delete">Delete a Meal:</h2>
+</div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Delete a Meal</h1>
+            <br>
+            <br>
+            <p>Fill in the table and click delete to delete your meal</p>
+        </div>
+        <div class="col-3-2">
+            <FORM action="{{ url_for('afterNutDelete') }}" method="post">
+             <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Meal Date</th>
+                    <th>Meal Name</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="inputDateForm" type="date" id="nutDate" name="nutDate"   >
+                    </td>
+                    <td>
+                        <select class="custom-select" name="mealNames" id="mealName">
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Snack">Snack</option>
+                        </select>
+                    </td>
+                </tr>
+             </table>
+            <br>
+            <p><div class="user-email1"></div></p>
+            <P><INPUT TYPE="SUBMIT" VALUE="Delete" NAME="B1"></P>
+            </FORM>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% set active_page = "workouts" %}
+{% block content %}
+
+
+<title>Workouts</title>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record A workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new workout. Dont lose your workout and record it to track your progress</p>
+            <center><a href = "/wrkSplash" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Workouts</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your workouts. View your recorderd workouts and track your progress</p>
+            <center><a href = "#workout" class="navBtn">Workouts</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete a Workout</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous workout. If you have make a mistake recording a workout just delete and resubmit it</p>
+            <center><a href = "/wrkDelete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+<br id="workout">
+<br>
+<br>
+<br>
+
+<!-----------View Your Recent Workouts----------------->
+{% for d in data %}
+    <<div class="offer">
+            <div class = "small-container">
+                <h2 class = "title">Your Workouts:</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class ="welcomeRow">
+                <div class="col-3">
+                    <h1> {{ d['wrkName'] }}</h1>
+                    <h1>on</h1>
+                    <h1>{{ d['wrkDate'] }}</h1>
+                </div>
+                <div class ="col-3-2">
+                    <br>
+                    <table style = "width:100%" BORDER="1">
+                        <tr>
+                            <td> {{ d['wrkEx1'] }}</td>
+                            <td> {{ d['wrkWeight1'] }}</td>
+                            <td>{{ d['wrkRep1'] }}</td>
+                            <td>{{ d['wrkSet1'] }}</td>
+                            <td>{{ d['wrkNote1'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx2'] }}</td>
+                            <td> {{ d['wrkWeight2'] }}</td>
+                            <td>{{ d['wrkRep2'] }}</td>
+                            <td>{{ d['wrkSet2'] }}</td>
+                            <td>{{ d['wrkNote2'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx3'] }}</td>
+                            <td> {{ d['wrkWeight3'] }}</td>
+                            <td>{{ d['wrkRep3'] }}</td>
+                            <td>{{ d['wrkSet3'] }}</td>
+                            <td>{{ d['wrkNote3'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx4'] }}</td>
+                            <td> {{ d['wrkWeight4'] }}</td>
+                            <td>{{ d['wrkRep4'] }}</td>
+                            <td>{{ d['wrkSet4'] }}</td>
+                            <td>{{ d['wrkNote4'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx5'] }}</td>
+                            <td> {{ d['wrkWeight5'] }}</td>
+                            <td>{{ d['wrkRep5'] }}</td>
+                            <td>{{ d['wrkSet5'] }}</td>
+                            <td>{{ d['wrkNote5'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx6'] }}</td>
+                            <td> {{ d['wrkWeight6'] }}</td>
+                            <td>{{ d['wrkRep6'] }}</td>
+                            <td>{{ d['wrkSet6'] }}</td>
+                            <td>{{ d['wrkNote6'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx7'] }}</td>
+                            <td> {{ d['wrkWeight7'] }}</td>
+                            <td>{{ d['wrkRep7'] }}</td>
+                            <td>{{ d['wrkSet7'] }}</td>
+                            <td>{{ d['wrkNote7'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx8'] }}</td>
+                            <td> {{ d['wrkWeight8'] }}</td>
+                            <td>{{ d['wrkRep8'] }}</td>
+                            <td>{{ d['wrkSet8'] }}</td>
+                            <td>{{ d['wrkNote8'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx9'] }}</td>
+                            <td> {{ d['wrkWeight9'] }}</td>
+                            <td>{{ d['wrkRep9'] }}</td>
+                            <td>{{ d['wrkSet9'] }}</td>
+                            <td>{{ d['wrkNote9'] }}</td>
+                        </tr>
+                        <tr>
+                            <td> {{ d['wrkEx10'] }}</td>
+                            <td> {{ d['wrkWeight10'] }}</td>
+                            <td>{{ d['wrkRep10'] }}</td>
+                            <td>{{ d['wrkSet10'] }}</td>
+                            <td>{{ d['wrkNote10'] }}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+{% endblock %}

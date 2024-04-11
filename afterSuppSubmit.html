@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Supplement Submitted</title>
+<br>
+<br>
+
+<div class="offer">
+    <div class = "small-container">
+        <h2 class = "title">You Submitted:</h2>
+    </div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Supplements</h1>
+            <h1>on</h1>
+            <h1>{{ suppDate }}</h1>
+
+        </div>
+        <div class ="col-3-2">
+            <br>
+            <table style = "width:100%">
+                <tr>
+                    <th>Supplement</th>
+                    <th>Amount</th>
+                    <th>Unit</th>
+                </tr>
+                <tr>
+                    <td>{{ suppOneName }}</td>
+                    <td>{{ suppOneAmount }}</td>
+                    <td>{{ suppOneMeasurement }}</td>
+                </tr>
+                <tr>
+                    <td>{{ suppTwoName }}</td>
+                    <td>{{ suppTwoAmount }}</td>
+                    <td>{{ suppTwoMeasurement }}</td>
+                </tr>
+                <tr>
+                    <td>{{ suppThreeName }}</td>
+                    <td>{{ suppThreeAmount }}</td>
+                    <td>{{ suppThreeMeasurement }}</td>
+                </tr>
+                <tr>
+                    <td>{{ suppFourName }}</td>
+                    <td>{{ suppFourAmount }}</td>
+                    <td>{{ suppFourMeasurement }}</td>
+                </tr>
+                <tr>
+                    <td>{{ suppFiveName }}</td>
+                    <td>{{ suppFiveAmount }}</td>
+                    <td>{{ suppFiveMeasurement }}</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

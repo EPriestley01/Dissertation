@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% set active_page = "supplements" %}
+{% block content %}
+
+<title>Supplements</title>
+<br>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new supplement. Don't lose your supplement usage and record it to track yourself</p>
+            <center><a href = "/suppSplash" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your supplements. View your recorded supplements and track your progress</p>
+            <FORM action="{{ url_for('suppView') }}" method="post">
+                <center><INPUT style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;" TYPE="SUBMIT" VALUE="View Supplements" name="B1"></center>
+            <p><div class="user-email2"></div></p>
+            </FORM>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous supplements. If you have made a mistake recording supplements just delete and resubmit</p>
+            <center><a href = "#delete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+
+<br id="delete">
+<br>
+<br>
+<br>
+
+
+<!-----------Delete a Workout----------------->
+<div class="offer">
+<div class = "small-container">
+    <h2 class = "title" id="delete">Delete Supplements:</h2>
+</div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Delete Supplements</h1>
+            <br>
+            <br>
+            <p>Fill in the table and click delete to delete your supplements</p>
+        </div>
+        <div class="col-3-2">
+            <FORM action="{{ url_for('afterSuppDelete') }}" method="post">
+             <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Supplement Date</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="inputDateForm" type="date" id="suppDate" name="suppDate"   >
+                    </td>
+                </tr>
+             </table>
+            <br>
+            <p><div class="user-email1"></div></p>
+            <P><INPUT TYPE="SUBMIT" VALUE="Delete" NAME="B1"></P>
+            </FORM>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

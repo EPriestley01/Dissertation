@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Supplements</title>
+<br>
+<br>
+
+
+<!-----------Navigate Workout Page----------------->
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1 style="text-align: center">Record Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to record a new supplement. Don't lose your supplement usage and record it to track yourself</p>
+            <center><a href = "#record" class="navBtn">Record</a></center>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">View Your Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to view your supplements. View your recorded supplements and track your progress</p>
+            <FORM action="{{ url_for('suppView') }}" method="post">
+                <center><INPUT style="align-items: center; width:50%; border-radius: 30px; transition: background 0.5s;" TYPE="SUBMIT" VALUE="View Supplements" name="B1"></center>
+                <p><div class="user-email2"></div></p>
+            </FORM>
+        </div>
+        <div class="col-3">
+            <h1 style="text-align: center">Delete Supplements</h1>
+            <br>
+            <br>
+            <p style="text-align: center">Click below to delete a previous supplements. If you have made a mistake recording supplements just delete and resubmit</p>
+            <center><a href = "/suppDelete" class="navBtn">Delete</a></center>
+        </div>
+    </div>
+</div>
+
+
+<br id="record">
+<br>
+<br>
+<br>
+
+
+
+<!----------- Submit a supplement ----------------->
+<div class="offer">
+    <div class = "small-container">
+        <h2 class = "title" id="delete">Record Supplements:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1>Record Your Latest Supplements</h1>
+            <br>
+            <br>
+            <p>Click here to record your supplements so you can save what you are taking.</p>
+        </div>
+        <div class="col-3-2">
+            <FORM  action="{{ url_for('afterSuppSubmit') }}" method="post">
+             <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="inputNameForm" type="date" id="suppDate" name="suppDate" required>
+                    </td>
+             </table>
+            <br>
+            <table style = "width:100%" BORDER="1">
+                <tr>
+                    <th>Supplement</th>
+                    <th style="width:20%">Amount</th>
+                    <th style="width:20%">Unit</th>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" name="suppOneName" placeholder="Item 1" maxlength="50"></td>
+                    <td style="width:20%"><INPUT id="inputDataIntForm" TYPE="number" NAME="suppOneAmount" placeholder="25" min="0" max="1000" ></td>
+                    <td style="width:20%"  id="inputDataTextForm">
+                        <select class="custom-select" name="suppOneMeasurement" id="">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" name="suppTwoName" placeholder="Item 2" maxlength="50"></td>
+                    <td style="width:20%"><INPUT id="inputDataIntForm" TYPE="number" name="suppTwoAmount" placeholder="25" min="0" max="1000"></td>
+                    <td style="width:20%; color:white">
+                        <select class="custom-select" name="suppTwoMeasurement" id="workoutName">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" name="suppThreeName" placeholder="Item 3" maxlength="50"></td>
+                    <td style="width:20%"><INPUT id="inputDataIntForm" TYPE="number" name="suppThreeAmount" placeholder="25" min="0" max="1000"></td>
+                    <td style="width:20%">
+                        <select class="custom-select" name="suppThreeMeasurement" id="workoutName">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" NAME="suppFourName" placeholder="Item 4" maxlength="50"></td>
+                    <td style="width:20%"><INPUT id="inputDataIntForm" TYPE="number" name="suppFourAmount" placeholder="25" min="0" max="1000"></td>
+                    <td style="width:20%">
+                        <select class="custom-select" name="suppFourMeasurement" id="workoutName">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><INPUT id="inputDataTextForm" TYPE="TEXT" name="suppFiveName" placeholder="Item 5" maxlength="50"></td>
+                    <td style="width:20%"><INPUT id="inputDataIntForm" TYPE="number" name="suppFiveAmount" placeholder="25" min="0" max="1000" ></td>
+                    <td style="width:20%">
+                        <select class="custom-select" name="suppFiveMeasurement" id="workoutName">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <P><INPUT TYPE="SUBMIT" VALUE="Submit" name="B1"></P>
+            <p><div class="user-email1"></div></p>
+            </FORM>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+
+{% endblock %}

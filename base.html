@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="GYMFIT">
+    <meta name="author" content="Ed Priestley">
+    <meta http-equiv="X-UA-Compatible" content="" ie="edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" type="image/x-icon" href="static/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav>
+    <ul>
+        <li><a href="/home" style="background-color: #ff523b;">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/wrkSplash" style="display: none" class="logged-in">Workout</a></li>
+        <li><a href="/nutSplash" style="display: none" class="logged-in">Nutrition</a></li>
+        <li><a href="/suppSplash" style="display: none" class="logged-in">Supplements</a></li>
+        <li style="float:right; display: none" class="logged-in"><a href="#" id="logout">Logout</a></li>
+        <li style="float:right; display: none" class="logged-in"><a href="#" class="modal-trigger"
+                                                     data-target="modal-account">Account</a></li>
+        <li style="float:right; display: none" class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li style="float:right; display: none" class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Sign
+            Up</a></li>
+    </ul>
+</nav>
+
+
+
+<!-- Sign Up -->
+<div id="modal-signup" class="modal">
+    <div class="modal-content">
+        <script>
+            function disableSubmit() {
+                document.getElementById("submit").disabled = true;
+            }
+
+            function activateButton(element) {
+
+                if (element.checked) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+        </script>
+        <h2 class="title">Sign Up</h2>
+        <FORM id="signup-form">
+            <label for="signup-username">Enter Username:</label>
+            <input type="text" name="item" id="signup-username" placeholder="username" style="color:white" min="4"
+                   max="20" required><br>
+            <br style="height:50%">
+
+            <label for="signup-email">Enter Email:</label>
+            <input type="email" name="email" id="signup-email" placeholder="name@email.com" style="color:white" min="3"
+                   max="100" required>
+            <br>
+
+            <label for="signup-password">Enter Password:</label>
+            <input type="password" name="item" id="signup-password" placeholder="*************" style="color:white"
+                   min="8" max="20" required>
+            <br>
+
+            <label for="signup-goal">Goal :</label>
+            <input type="text" name="item" id="signup-goal" placeholder="goal" style="color:white" max="20" required>
+            <br>
+
+            <label for="terms">Click <u>HERE</u> To Agree Terms & Conditions test</label>
+            <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)" style="color:white">
+            <br>
+            <a href="http://127.0.0.1:8080/TandC">View Terms & Conditions </a>
+            <br>
+
+            <input type="submit" name="submit" id="submit" value="Submit" disabled>
+            <label for="signup-email" class="error red-text left-align"></label>
+        </FORM>
+    </div>
+</div>
+
+
+<!-- Login -->
+<div id="modal-login" class="modal">
+    <div class="modal-content">
+        <h2 class="title">Login</h2>
+        <FORM id="login-form">
+            <label for="login-email">Enter Email:</label>
+            <input type="email" name="email" id="login-email" placeholder="name@email.com" style="color:white" required>
+            <br>
+            <br>
+            <label for="login-password">Enter Password:</label>
+            <input type="password" name="item" id="login-password" placeholder="*************" style="color:white"
+                   required>
+            <br>
+            <br>
+            <input type="submit" name="submit" id="submit" value="Submit">
+            <label for="signup-email" class="error red-text left-align"></label>
+        </FORM>
+    </div>
+</div>
+
+
+<!-- Account -->
+<div id="modal-account" class="modal">
+    <div class="modal-content">
+        <div class="welcomeRow">
+            <div class="col-2Account">
+                <h2 class="title">Your Account Details:</h2>
+                <br>
+                <img class="accountImg" src="static/avatar.png">
+                <br>
+                <h2 class="userInfoTitle">Username:</h2>
+                <center><p><span id="account-username"></span></p></center>
+                <br>
+                <h2 class="userInfoTitle">Email Address:</h2>
+                <center><p><span id="account-details"></span></p></center>
+            </div>
+
+
+            <div class="col-2Account">
+                <h2 class="title">Your Goal:</h2>
+                <br>
+                <img class="accountImg" src="static/goals.png">
+                <h2 class="userInfoTitle">You want to:</h2>
+                <center><p><span id="account-details"></span></p></center>
+                <center><p><span id="account-goal"></span></p></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<body>
+<br>
+<br>
+<br>
+{% block content %}
+{% endblock %}
+</body>
+<!-----------footer----------------->
+<footer>
+    <div class="small-container">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-4">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li>Workouts</li>
+                            <li>Nutrition</li>
+                            <li>Supplements</li>
+                            <li>Products</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li>Disclaimer</li>
+                            <li>Privacy Policy</li>
+                            <li>Complaints</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="static/logo3.png">
+                        <p>devoted to your fitness</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Account</li>
+                            <li>Login</li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright"> Copyright 2022 - L6 Dissertation</p>
+            </hr>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+<script>
+    //Initialise Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBOW675zUTcbnrR0zl-6KO6IRgMF_UOURo",
+        authDomain: "individualproject-52c1f.firebaseapp.com",
+        projectId: "individualproject-52c1f",
+        storageBucket: "individualproject-52c1f.appspot.com",
+        messagingSenderId: "645133224565",
+        appId: "1:645133224565:web:64bb35ac85b9df508c063c",
+        measurementId: "G-DH30NSKLTV"
+    };
+
+
+    firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    //update firestore settings
+    db.settings({timestampsInSnapshot: true});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="static/index.js"></script>
+<script src="static/auth.js"></script>
+
+<script>function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}</script>
+
+</html>

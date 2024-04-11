@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Meal Submitted</title>
+<br>
+<br>
+
+<div class="offer">
+    <div class = "small-container">
+        <h2 class = "title">You Submitted:</h2>
+    </div>
+</div>
+<div class="container">
+    <div class ="welcomeRow">
+        <div class="col-3">
+            <h1> {{ mealNames }}</h1>
+            <h1>on</h1>
+            <h1>{{ nutDate }}</h1>
+        </div>
+        <div class ="col-3-2">
+            <br>
+            <table style = "width:100%">
+                <tr>
+                    <th>Food</th>
+                    <th style="width:30%">Amount</th>
+                    <th style="width:20%">Unit</th>
+                    <th style="width:30%">Calories</th>
+                </tr>
+                <tr>
+                    <td> {{ fdItem1 }}</td>
+                    <td> {{ fdAmount1 }}</td>
+                    <td>{{ fdUnit1 }}</td>
+                    <td>{{ fdCal1 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem2 }}</td>
+                    <td> {{ fdAmount2 }}</td>
+                    <td>{{ fdUnit2 }}</td>
+                    <td>{{ fdCal2 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem3 }}</td>
+                    <td> {{ fdAmount3 }}</td>
+                    <td>{{ fdUnit3 }}</td>
+                    <td>{{ fdCal3 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem4 }}</td>
+                    <td> {{ fdAmount4 }}</td>
+                    <td>{{ fdUnit4 }}</td>
+                    <td>{{ fdCal4 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem5 }}</td>
+                    <td> {{ fdAmount5 }}</td>
+                    <td>{{ fdUnit5 }}</td>
+                    <td>{{ fdCal5 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ dItem6 }}</td>
+                    <td> {{ fdAmount6 }}</td>
+                    <td>{{ fdUnit6 }}</td>
+                    <td>{{ fdCal6 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem7 }}</td>
+                    <td> {{ fdAmount7 }}</td>
+                    <td>{{ fdUnit7 }}</td>
+                    <td>{{ fdCal7 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem8 }}</td>
+                    <td> {{ fdAmount8 }}</td>
+                    <td>{{ fdUnit8 }}</td>
+                    <td>{{ fdCal8 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ dfdItem9 }}</td>
+                    <td> {{ fdAmount9 }}</td>
+                    <td>{{ fdUnit9 }}</td>
+                    <td>{{ fdCal9 }}</td>
+                </tr>
+                <tr>
+                    <td> {{ fdItem10 }}</td>
+                    <td> {{ fdAmount10 }}</td>
+                    <td>{{ fdUnit10 }}</td>
+                    <td>{{ fdCal10 }}</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
